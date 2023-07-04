@@ -1,0 +1,7 @@
+构建代码，生成dll文件
+
+项目文件夹即存放.pro文件的文件夹
+
+将dll文件放入项目文件夹和项目构建的Release或Dug文件夹中
+
+将versiondownloader.h文件与VersionDownloader_global.h文件放入项目文件夹中
