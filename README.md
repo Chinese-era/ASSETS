@@ -1,4 +1,4 @@
-# -
+# 主要内容
 存储自己开发的工具
 
 # VersionDownloader
@@ -6,3 +6,6 @@
 
 # Download
 基于Python编写的下载程序
+
+# 软件注册
+在v1.0的release能看到
