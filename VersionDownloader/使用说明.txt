@@ -4,4 +4,8 @@
 
 将dll文件放入项目文件夹和项目构建的Release或Dug文件夹中
 
+在.pro文件中，编写如下代码
+LIBS += $$PWD/dll文件名.dll
+例如：LIBS += $$PWD/VersionDownloader.dll
+
 将versiondownloader.h文件与VersionDownloader_global.h文件放入项目文件夹中
