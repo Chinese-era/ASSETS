@@ -19,3 +19,17 @@ LIBS += $$PWD/dll文件名.dll
 
 则在.pro文件中添加
 QT += network
+
+
+Download函数
+传入下载地址、存放路径、需要调用的软件的路径（包括软件名）
+
+会返回"Successful"、"The application has quit"
+
+
+void checkUrl(const QString& url);
+传入url
+例如
+https://gitee.com/api/v5/repos/ChineseRabbit/first-project/releases/latest?access_token=2510c056bd9e23fb031975c75c0123bb
+
+将会得到版本号和第一个下载连接
