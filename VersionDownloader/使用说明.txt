@@ -33,3 +33,6 @@ void checkUrl(const QString& url);
 https://gitee.com/api/v5/repos/ChineseRabbit/first-project/releases/latest?access_token=2510c056bd9e23fb031975c75c0123bb
 
 将会得到版本号和第一个下载连接
+
+
+在使用windeployqt 打包主程序时，将.dll文件也用windeployqt 进行打包，然后放入主程序打包目录下，我已打包了一次.dll文件放入Release中
