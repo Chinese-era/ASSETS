@@ -1,3 +1,0 @@
-传入下载路径与安装路径即可使用
-
-搭配VersionDownloader效果更佳
