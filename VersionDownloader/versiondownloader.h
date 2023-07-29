@@ -38,10 +38,16 @@ public:
     bool unzipFile(const QString& zipFilePath, const QString& destinationDir);
 
     /**
+     * @brief 非静默安装
+     * @param app 安装程序的路径
+     */
+    void NonSilentInstallation(const QString& installerPath);
+
+    /**
      * @brief 安装软件
      * @param 安装程序的路径
      */
-    void installApplication(const QString& installerPath);
+    void SilentInstallation(const QString& installerPath);
 
     /**
      * @brief 删除文件夹

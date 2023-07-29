@@ -165,18 +165,59 @@ bool VersionDownloader::unzipFile(const QString& zipFilePath, const QString& des
 }
 
 /**
- * @brief 安装软件
+ * @brief 非静默安装
+ * @param app 安装程序的路径
+ */
+void VersionDownloader::NonSilentInstallation(const QString& installerPath)
+{
+    QFile file(installerPath);
+    if (file.exists()) {
+        QProcess installerProcess;
+        QStringList arguments;
+
+        // 创建事件循环对象
+        QEventLoop loop;
+
+        // 将事件循环与 reply 的 finished() 信号关联
+        QObject::connect(&installerProcess,
+                         &QProcess::stateChanged,
+                         &loop, &QEventLoop::quit);
+
+        //启动程序
+        installerProcess.start(installerPath, arguments);
+
+        // 阻塞线程，等待 reply 完成响应
+        loop.exec();
+    }
+}
+
+/**
+ * @brief 静默安装软件
  * @param 安装程序的路径
  */
-void VersionDownloader::installApplication(const QString& installerPath)
+void VersionDownloader::SilentInstallation(const QString& installerPath)
 {
-    QProcess installerProcess;
-    QStringList arguments;
-    arguments << "/SILENT" << "/SP-" << "/SUPPRESSMSGBOXES";
+    QFile file(installerPath);
+    if (file.exists()) {
+        QProcess installerProcess;
+        QStringList arguments;
+        arguments << "/SILENT" << "/SP-" << "/SUPPRESSMSGBOXES";
 
-    installerProcess.start(installerPath, arguments);
-    installerProcess.waitForFinished();
+        // 创建事件循环对象
+        QEventLoop loop;
 
+        // 将事件循环与 reply 的 finished() 信号关联
+        QObject::connect(&installerProcess,
+                         &QProcess::stateChanged,
+                         &loop, &QEventLoop::quit);
+
+
+        installerProcess.start(installerPath, arguments);
+
+
+        // 阻塞线程，等待 reply 完成响应
+        loop.exec();
+    }
 }
 
 /**
