@@ -4,7 +4,7 @@
 ;修改文件名称
 #define MyAppName "期末冲刺"
 ;修改版本号
-#define MyAppVersion "v1.0"
+#define MyAppVersion "v2.1.3"
 #define MyAppPublisher "周霖"
 #define MyAppExeName "PracticeQuestions.exe"
 
@@ -20,13 +20,13 @@ AppPublisher={#MyAppPublisher}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; 移除以下行，以在管理安装模式下运行（为所有用户安装）。
-PrivilegesRequired=lowest
+PrivilegesRequired=admin
 
 ;创建安装包后的存放位置
 OutputDir=D:\SharedFolders
 
 ;创建安装包的名字
-OutputBaseFilename=mysetupV1.0
+OutputBaseFilename=mysetup
 
 ;图标为止
 SetupIconFile=D:\SharedFolders\app.ico
@@ -38,7 +38,7 @@ WizardStyle=modern
 Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone;
 
 [Files]
 ;需要打包的应用程序的路径
